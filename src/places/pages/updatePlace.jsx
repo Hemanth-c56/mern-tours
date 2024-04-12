@@ -98,6 +98,11 @@ function UpdatePlace() {
     );
   }
 
+  const handleEditCLick = (event)=>{
+    event.preventDefault();
+    console.log("clicked")
+  }
+
   return (
     <form className="place-form">
       <Input
@@ -121,7 +126,7 @@ function UpdatePlace() {
         initialValue={formState.inputs.description.value}
         initialValid={formState.inputs.description.isValid}
       />
-      <Button type="submit" disabled={!formState.isValid}>
+      <Button type="submit" onClick={handleEditCLick} disabled={!formState.isValid}>
         UPDATE PLACE
       </Button>
     </form>
